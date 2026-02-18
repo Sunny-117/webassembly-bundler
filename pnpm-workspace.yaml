@@ -1,0 +1,5 @@
+packages:
+  - rspack
+  - vite
+  - webpack4
+  - webpack5

@@ -19,13 +19,7 @@ module.exports = {
       {
         test: /\.wasm$/,
         type: 'javascript/auto',
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'wasm'
-          }
-        }
+        loaders: ['wasm-loader'],
       }
     ]
   },
@@ -40,7 +34,4 @@ module.exports = {
     historyApiFallback: true,
   },
   mode: 'development',
-  experiments: {
-    syncWebAssembly: true
-  }
 };

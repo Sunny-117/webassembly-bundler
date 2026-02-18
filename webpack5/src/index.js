@@ -1,9 +1,8 @@
-import init, * as wasm from '../../rust-wasm/pkg/rust_wasm';
+// Webpack 5 使用 ESM 导入 wasm-bindgen 生成的模块
+// wasm-bindgen 生成的模块在导入时会自动初始化
+import * as wasm from '../../rust-wasm/pkg/rust_wasm';
 
 async function runApp() {
-  // 初始化WASM模块
-  await init();
-
   // 绑定UI事件
   document.getElementById('fib-btn').addEventListener('click', () => {
     const result = wasm.fibonacci(30);
